@@ -12,7 +12,7 @@ function draw() {
 
   noStroke();
   text("2", 30, 60); // nummer 2
-  fill(250, 0 ,0); // Nederlandse vlag met kleuren en vorm
+  fill(250, 0 ,0); // Nederlandse vlag , rood, wit, blauw en vorm
   rect(50,50,90,20);
   fill(255, 255, 255);
   rect(50,70,90,20);
@@ -24,9 +24,9 @@ function draw() {
   strokeWeight(0,5);
   text("3", 30, 140);
   strokeWeight(2);
-  fill(255);
+  fill(255); // witte oppervlakte
   rect(50,140,120,120);
-  fill(0,0,0);
+  fill(0,0,0); // zwarte platen
   rect(50,140,40,40);
   rect(50,220,40,40);
   rect(90,180,40,40);
@@ -46,10 +46,10 @@ function draw() {
   text("5", 170, 40);
   noStroke();
   fill(140);
-  rect(190,40,60,130);
+  rect(190,40,60,130); // grijze pilaar
   rect(205,150, 30, 110);
-  fill(255,0,0);
-  circle(220,65,30);
+  fill(255,0,0); // kleuren van de stoplichten
+  circle(220,65,30); // stoplichten
   fill(255,130,0);
   circle(220,105,30);
   fill(0,255,0);
@@ -57,17 +57,21 @@ function draw() {
 
   stroke(0);
   fill(0);
-  text("6", 170, 300);
-  strokeWeight(4);
-  fill(255);
+  text("6", 170, 300); // nummer
+  strokeWeight(4); // dikte rand
+  fill(255); // witte oppervlakte en vierkand met ronde rand
   rect(190,320, 80,80,10);
   strokeWeight(15);
-  point(210,340);
+  point(210,340); // punten van dobbelsteen
   point(230,360);
   point(250,380);
 
   strokeWeight(0,5);
   fill(0);
   text("7", 280, 40);
+  text("Mario", 300,40);
+  fill(250,0,0);
+  rect(320,60,60,10);
+  rect(310,70,100,10);
 
 }
