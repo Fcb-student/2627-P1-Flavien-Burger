@@ -122,7 +122,7 @@ function draw() {
   text("8",440,40);
   text("Link",460,40); // nummer en naam //
 
-  fill(40, 80, 50); // kleding uitlijn //
+  fill(30, 70, 40); // kleding uitlijn //
   rect(580,60,60,10); // hoed // 
   rect(550,70,90,10);
   rect(630,80,10,10);
@@ -225,7 +225,7 @@ function draw() {
   rect(670,180,10,50);
   rect(690,200,100,20);
 
-  fill(65, 138, 74); // hoed kleur //
+  fill(70, 140, 8); // hoed kleur //
   rect(550,80,80,10);
   rect(540,90,70,10);
   rect(530,100,80,10);
@@ -237,5 +237,14 @@ function draw() {
   rect(490,140,50,10);
   rect(560,150,10,10);
   rect(570,140,10,10);
+
+  rect(600,200,40,20); // kleding kleur //
+  rect(570,220,30,10);
+  rect(560,210,20,10);
+  rect(560,190,10,20);
+  rect(550,230,20,10);
+  rect(620,230,20,10);
+  rect(560,240,70,10);
+  rect(570,250,50,10);
 
  }
