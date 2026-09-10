@@ -120,5 +120,7 @@ function draw() {
 
   fill(0,0,0);
   text("8",440,40);
-  text("Link",460,40);
+  text("Link",460,40); // nummer en naam //
+  fill(44, 92, 50); // hoed uitlijn //
+  fill(65, 138, 74); // hoed //
 }
