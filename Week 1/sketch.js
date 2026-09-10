@@ -117,4 +117,8 @@ function draw() {
   fill(255,255,0); // knopen //
   rect(330,160,10,10);
   rect(360,160,10,10);
+
+  fill(0,0,0);
+  text("8",440,40);
+  text("Link",460,40);
 }
