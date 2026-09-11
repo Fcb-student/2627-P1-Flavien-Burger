@@ -296,7 +296,7 @@ function draw() {
   rect(100,470,140,100);
 
   fill(0); // knopen //
-  rect(60,560,10,10); // linkwe //
+  rect(60,560,10,10); // linker //
   rect(60,460,10,10);
   rect(40,520,10,10,);
   rect(30,530,10,10);
