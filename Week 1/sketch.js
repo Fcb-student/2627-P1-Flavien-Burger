@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(1200, 800);
+  createCanvas(850, 650);
 }
 
 function draw() {
@@ -272,5 +272,44 @@ function draw() {
   rect(650,150,10,20);
   rect(620,90,20,10);
   rect(660,80,20,10);
+
+  fill(0); // nummer //
+  text("9",30,430);
+  text("Nintendo switch, games", 50,430);
+  rect(); // persoonlijk ding: game console //
+
+  fill(0,0,255); // blauwe kant //
+  rect(20,470,10,100);
+  rect(30,460,20,120);
+  rect(50,450,30,140);
+
+  fill(255,0,0); // rode kant //
+  rect(260,450,30,140);
+  rect(290,460,20,120);
+  rect(310,470,10,100);
+
+  fill(0); // scherm //
+  rect(80,450,180,140);
+  fill(80);
+  rect(90,460,160,120);
+  fill(160);
+  rect(100,470,140,100);
+
+  fill(0); // knopen //
+  rect(60,560,10,10); // linkwe //
+  rect(60,460,10,10);
+  rect(40,520,10,10,);
+  rect(30,530,10,10);
+  rect(40,540,10,10);
+  rect(50,530,10,10);
+  rect(40,480,20,20);
+
+  rect(270,460,10,10); // rechter //
+  rect(280,480,10,10);
+  rect(270,490,10,10);
+  rect(280,500,10,10);
+  rect(290,490,10,10);
+  rect(270,560,10,10);
+  rect(280,530,20,20);
 
  }
