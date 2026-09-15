@@ -11,4 +11,11 @@ function draw() {
   fill(255,255,0); // zon maken
   circle(100,60,50);
 
+  fill(0,200,50); // grond
+  rect(0,400,800,200);
+  fill(0,150,40);
+  rect(0,420,800,180);
+  fill(160);
+  rect(0,430,800,170);
+
 }
