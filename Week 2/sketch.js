@@ -26,14 +26,20 @@ function draw() {
   triangle(570,520,510,100,600,520);
   triangle(750,520,750,250,850,520);
 // wolken
-  fill(180);
+  fill(230);
   circle(30,100,40);
   circle(50,110,40);
   circle(70,90,40);
+  circle(200,80,40);
+  circle(220,90,40);
+  circle(240,70,40);
   fill(240);
   circle(40,100,40);
   circle(60,110,40);
   circle(80,90,40);
+  circle(210,80,40);
+  circle(230,90,40);
+  circle(250,70,40);
 
   fill(0,200,50); // grond
   rect(0,500,1000,200);
@@ -53,7 +59,12 @@ function draw() {
   rect(780,600,80,10,80);
   rect(890,600,80,10,80);
 
-  fill(); // bomen 
+  fill(); // bomen stam
+  // bladeren
+  fill();
+  fill();
+  fill();
+
 
 
 
