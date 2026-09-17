@@ -13,7 +13,8 @@ text("4. Beweeg de eightball met WASD of de pijltjestoetsen.",360,20);
 
 if (keyIsPressed == true) {
     if(keyCode == b) {
-
+      fill(255);
+      rect(20,40,60,60);
     }
   }
 
