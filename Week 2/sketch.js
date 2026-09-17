@@ -1,3 +1,10 @@
+let Z = zon
+let W = wolken
+let rA = rodeAuto
+let bA = blauweAuto
+let wA = witteAuto
+let S = stoplicht
+
 function setup() {
   createCanvas(1000, 700);
 }
@@ -127,7 +134,13 @@ function draw() {
   circle(100,525,80);
   circle(840,525,80);
 
-
-
-
+ if (keyIsPressed == true) {
+  if(keyCode === 32)
+    fill(255,0,0);
+    circle(915,320,30);
+    fill(242, 124, 5);
+    circle(915,360, 30);
+    fill(0,255,0);
+    circle(915,400,30);
+ }
 }
