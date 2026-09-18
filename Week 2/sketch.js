@@ -10,6 +10,14 @@ let autoWitX = 700
 let autoWitY = 600
 let autoWitSpeed = 6
 
+let zonX = 100
+let zonY = 60
+let zonSpeed  = 4
+
+let zonStralingX = 100
+let zonStralingY = 60
+let zonStralingSpeed = 4
+
 let stopLichtKleur = 1;
 
 function setup() {
@@ -104,11 +112,24 @@ function draw() {
   fill(0, 255, 0, 100);
   circle(915, 400, 30);
 
-  // auto's
-  autoRoodX = autoRoodX + autoRoodpeed // snelheid van rode auto
+  // auto's snelheid
+  autoRoodX = autoRoodX + autoRoodSpeed // snelheid van rode auto
+  
+  autoBlauwX = autoBlauwX + autoBlauwSpeed // snelheid blauwe auto
 
+  autoWitX = autoWitX + autoWitSpeed // snelheid witte auto
+
+  // auto's loop
   if ( autoRoodX > 1000){
     autoRoodX = -150
+  }
+
+  if (autoBlauwX > 1000){
+    autoBlauwX = -150
+  }
+
+  if (autoWitX > 1000){
+    autoWitX = -150
   }
 
   fill(255, 50, 50); // rood
@@ -127,9 +148,9 @@ function draw() {
 
   fill(200, 200, 200); // wit
   rect(autoWitX, autoWitY, 150, 40);
-  rect(autoWitX, autoWitY +40, 125, 40);
+  rect(autoWitX, autoWitY -40, 125, 40);
   fill(50, 50, 50);
-  circle(autoWitX +24, autoWitY +40, 50);
+  circle(autoWitX +25, autoWitY +40, 50);
   circle(autoWitX +110, autoWitY +40, 50);
 
   fill(128, 75, 6); // bomen stam
@@ -151,23 +172,29 @@ function draw() {
   if (stopLichtKleur == 0){
     fill(255, 0, 0);
     circle(915, 320, 30);
-    autoroodspeed = 0
+    autoRoodSpeed = 0
+    autoBlauwSpeed = 0
+    autoWitSpeed = 0
 
   }
 
    if (stopLichtKleur == 2){
     fill(242, 124, 5);
     circle(915, 360, 30);
-    autoroodspeed = 3
+    autoRoodSpeed = 3
+    autoBlauwSpeed = 3
+    autoWitSpeed = 3
   }
    if (stopLichtKleur == 1){
     fill(0, 255, 0);
     circle(915, 400, 30);
-    autoroodspeed = 3
+    autoRoodSpeed = 3
+    autoBlauwSpeed = 3
+    autoWitSpeed = 6
   }
 
   fill(0);
-  text("stoplichtKleur: "+stopLichtKleur, 60, 70)
+  text("stoplichtKleur: "+ stopLichtKleur, 60, 70)
 }
 
 function keyPressed()
