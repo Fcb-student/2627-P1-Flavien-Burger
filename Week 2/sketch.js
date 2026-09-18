@@ -1,24 +1,24 @@
-let autoRoodX = 150
+let autoRoodX = 150 // positie en snelheid van rode auto
 let autoRoodY = 500
 let autoRoodSpeed = 4
 
-let autoBlauwX = 450
+let autoBlauwX = 450 // positie en snelheid van blauwe auto
 let autoBlauwY = 500
 let autoBlauwSpeed = 4
 
-let autoWitX = 700
+let autoWitX = 700 // positie en snelheid van witte auto
 let autoWitY = 600
 let autoWitSpeed = 6
 
-let zonX = 100
+let zonX = 100 // psoitie en snelheid van de zon
 let zonY = 60
-let zonSpeed  = 2
+let zonSpeed  = 0.5
 
-let zonStralingX = 100
+let zonStralingX = 100 // psoitie en snelheid van de zonnestraling
 let zonStralingY = 60
-let zonStralingSpeed = 2
+let zonStralingSpeed = 0.5
 
-let witWolk1X = 40
+let witWolk1X = 40 // positie x van wittewolken
 let witWolk2X = 60
 let witWolk3X = 80
 let witWolk4X = 210
@@ -31,7 +31,9 @@ let witWolk10X = 750
 let witWolk11X = 790
 let witWolk12X = 830
 
-let witWolk1Y = 100
+let witWolkspeed = 1 // snelheid witte wolk
+
+let witWolk1Y = 100 // y positie van witte wolken
 let witWolk2Y = 110
 let witWolk3Y = 90
 let witWolk4Y = 80
@@ -44,7 +46,7 @@ let witWolk10Y = 100
 let witWolk11Y = 95
 let witWolk12Y = 100
 
-let grijsWolk1X = 30
+let grijsWolk1X = 30 // x positie van grijze wolken
 let grijsWolk2X = 50
 let grijsWolk3X = 70
 let grijsWolk4X = 200
@@ -57,7 +59,9 @@ let grijsWolk10X = 760
 let grijsWolk11X = 790
 let grijsWolk12X = 830
 
-let grijsWolk1Y = 100
+let grijsWolkspeed = 1 // snelheid van grijze wolken
+
+let grijsWolk1Y = 100 // y positie van grijze wolken
 let grijsWolk2Y = 110
 let grijsWolk3Y = 90
 let grijsWolk4Y = 80 
@@ -70,8 +74,7 @@ let grijsWolk10Y = 105
 let grijsWolk11Y = 95
 let grijsWolk12Y = 100
 
-
-let stopLichtKleur = 1;
+let stopLichtKleur = 1; // begin kleur van stoplicht
 
 function setup() {
   createCanvas(1000, 700);
@@ -79,22 +82,16 @@ function setup() {
 
 function draw() {
   background(150, 255, 255);
+  noStroke(); // geen uitlijnen
 
-  if (keyIsPressed == true) {
-    if (keyCode == ENTER) {
-    }
+  zonStralingX = zonStralingX + zonStralingSpeed // zon beweegd en reset
+  if (zonStralingX> 1050){
+    zonStralingX = -100
   }
 
-  noStroke();
-
-  zonStralingX = zonStralingX + zonStralingSpeed
-  if (zonStralingX> 1100){
-    zonStralingX = -200
-  }
-
-  zonX = zonX + zonSpeed
-  if (zonX> 1100){
-    zonX = -200
+  zonX = zonX + zonSpeed // zonnestraling beweegd en reset
+  if (zonX> 1000){
+    zonX = -150
   }
 
   fill(200, 200, 0, 200); // zonne stralling
@@ -110,6 +107,127 @@ function draw() {
   triangle(270, 520, 320, 150, 400, 520);
   triangle(570, 520, 510, 100, 600, 520);
   triangle(750, 520, 750, 250, 850, 520);
+
+  witWolk1X = witWolk1X + witWolkspeed // de wolken gaan bewegen en reseten van positie
+  if (witWolk1X> 1050){
+    witWolk1X = -150
+  }
+
+  witWolk2X = witWolk2X + witWolkspeed
+  if (witWolk2X> 1050){
+    witWolk2X = -150
+  }
+
+  witWolk3X = witWolk3X + witWolkspeed
+  if (witWolk3X> 1050){
+    witWolk3X = -150
+  }
+
+  witWolk4X = witWolk4X + witWolkspeed
+  if (witWolk4X> 1050){
+    witWolk4X = -150
+  }
+
+  witWolk5X = witWolk5X + witWolkspeed
+  if (witWolk5X> 1050){
+    witWolk5X = -150
+  }
+
+  witWolk6X = witWolk6X + witWolkspeed
+  if (witWolk6X> 1050){
+    witWolk6X = -150
+  }
+
+  witWolk7X = witWolk7X + witWolkspeed
+  if (witWolk7X> 1050){
+    witWolk7X = -150
+  }
+
+  witWolk8X = witWolk8X + witWolkspeed
+  if (witWolk8X> 1050){
+    witWolk8X = -150
+  }
+
+  witWolk9X = witWolk9X + witWolkspeed
+  if (witWolk9X> 1050){
+    witWolk9X = -150
+  }
+
+  witWolk10X = witWolk10X + witWolkspeed
+  if (witWolk10X> 1050){
+    witWolk10X = -150
+  }
+
+  witWolk11X = witWolk11X + witWolkspeed
+  if (witWolk11X> 1050){
+    witWolk11X = -150
+  }
+
+  witWolk12X = witWolk12X + witWolkspeed
+  if (witWolk12X> 1050){
+    witWolk12X = -150
+  }
+
+  grijsWolk1X = grijsWolk1X + grijsWolkspeed
+  if (grijsWolk1X> 1050){
+    grijsWolk1X = -150
+  }
+
+  grijsWolk2X = grijsWolk2X + grijsWolkspeed
+  if (grijsWolk2X> 1050){
+    grijsWolk2X = -150
+  }
+
+  grijsWolk3X = grijsWolk3X + grijsWolkspeed
+  if (grijsWolk3X> 1050){
+    grijsWolk3X = -150
+  }
+
+  grijsWolk4X = grijsWolk4X + grijsWolkspeed
+  if (grijsWolk4X> 1050){
+    grijsWolk4X = -150
+  }
+
+  grijsWolk5X = grijsWolk5X + grijsWolkspeed
+  if (grijsWolk5X> 1050){
+    grijsWolk5X = -150
+  }
+
+  grijsWolk6X = grijsWolk6X + grijsWolkspeed
+  if (grijsWolk6X> 1050){
+    grijsWolk6X = -150
+  }
+
+  grijsWolk7X = grijsWolk7X + grijsWolkspeed
+  if (grijsWolk7X> 1050){
+    grijsWolk7X = -150
+  }
+
+  grijsWolk8X = grijsWolk8X + grijsWolkspeed
+  if (grijsWolk8X> 1050){
+    grijsWolk8X = -150
+  }
+
+  grijsWolk9X = grijsWolk9X + grijsWolkspeed
+  if (grijsWolk9X> 1050){
+    grijsWolk9X = -150
+  }
+
+  grijsWolk10X = grijsWolk10X + grijsWolkspeed
+  if (grijsWolk10X> 1050){
+    grijsWolk10X = -150
+  }
+
+  grijsWolk11X = grijsWolk11X + grijsWolkspeed
+  if (grijsWolk11X> 1050){
+    grijsWolk11X = -150
+  }
+
+  grijsWolk12X = grijsWolk12X + grijsWolkspeed
+  if (grijsWolk12X> 1050){
+    grijsWolk12X = -150
+  }
+
   // wolken
   fill(200);
   circle(grijsWolk1X, grijsWolk1Y, 40); // eerste
@@ -232,7 +350,7 @@ function draw() {
   circle(840, 525, 80);
 
  
-  
+  // stoplicht verander van kleur
   if (stopLichtKleur == 0){
     fill(255, 0, 0);
     circle(915, 320, 30);
@@ -259,7 +377,7 @@ function draw() {
 
 }
 
-function keyPressed()
+function keyPressed() // stoplicht veranderd van kleur door spatiebalk
 {
   if (keyCode === 32) {
       
