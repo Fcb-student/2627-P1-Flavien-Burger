@@ -1,10 +1,14 @@
 let autoRoodX = 150
 let autoRoodY = 500
-let autoroodspeed = 3
+let autoRoodSpeed = 3
 
+let autoBlauwX = 450
+let autoBlauwY = 500
+let autoBlauwSpeed = 3
 
-let autoBlauwX
-let autoWit
+let autoWitX = 700
+let autoWitY = 600
+let autoWitSpeed = 6
 
 let stopLichtKleur = 1;
 
@@ -101,7 +105,7 @@ function draw() {
   circle(915, 400, 30);
 
   // auto's
-  autoRoodX = autoRoodX + autoroodspeed // snelheid van rode auto
+  autoRoodX = autoRoodX + autoRoodpeed // snelheid van rode auto
 
   if ( autoRoodX > 1000){
     autoRoodX = -150
@@ -115,18 +119,18 @@ function draw() {
   circle(autoRoodX + 110, autoRoodY+40, 50);
 
   fill(100, 100, 255); // blauw
-  rect(450, 500, 150, 40);
-  rect(450, 460, 125, 40);
+  rect(autoBlauwX, autoBlauwY, 150, 40);
+  rect(autoBlauwX, autoBlauwY - 40, 125, 40);
   fill(50, 50, 50);
-  circle(475, 540, 50);
-  circle(560, 540, 50);
+  circle(autoBlauwX +25, autoBlauwY + 40, 50);
+  circle(autoBlauwX +110, autoBlauwY + 40, 50);
 
   fill(200, 200, 200); // wit
-  rect(700, 600, 150, 40);
-  rect(700, 560, 125, 40);
+  rect(autoWitX, autoWitY, 150, 40);
+  rect(autoWitX, autoWitY +40, 125, 40);
   fill(50, 50, 50);
-  circle(724, 640, 50);
-  circle(810, 640, 50);
+  circle(autoWitX +24, autoWitY +40, 50);
+  circle(autoWitX +110, autoWitY +40, 50);
 
   fill(128, 75, 6); // bomen stam
   rect(50, 545, 30, 150);
