@@ -11,11 +11,17 @@ let vak7 = 0
 let vak8 = 0
 let vak9 = 0
 
-let grijs = 0
+let grijs = 0 // kleuren vakjes
 let rood = 1
 let blauw = 2
 
 let achtergrondRood = 400
+
+let grijzeVlakX = 180
+let grijzeVlakY = 105
+let grijzeVlakW = 110
+let grijzeVlakH = 110
+
 
 function setup() {
   createCanvas(800, 700);
@@ -27,17 +33,38 @@ function draw() {
   fill(255,0,0);
   rect(0,0,achtergrondRood,850);
 // speelbord
- strokeWeight(4);
+ strokeWeight(4); // vakjes voor input
   fill(30);
   rect(150,75,500,500,30);
-  fill(180);
-  rect(180,105,110,110,20);
-  rect(345,105,110,110,20);
-  rect(510,105,110,110,20);
-  rect(180,265,110,110,20);
-  rect(345,265,110,110,20);
-  rect(510,265,110,110,20);
-  rect(180,425,110,110,20);
-  rect(345,425,110,110,20);
-  rect(510,425,110,110,20);
+  fill(180); // grijze vlakjes
+  rect(grijzeVlakX,grijzeVlakY,grijzeVlakW,grijzeVlakH);
+  rect(grijzeVlakX +165,grijzeVlakY,grijzeVlakW,grijzeVlakH);
+  rect(grijzeVlakX +330,grijzeVlakY,grijzeVlakW,grijzeVlakH);
+  rect(grijzeVlakX,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
+  rect(grijzeVlakX +165,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
+  rect(grijzeVlakX +330,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
+  rect(grijzeVlakX,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
+  rect(grijzeVlakX +165,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
+  rect(grijzeVlakX +330,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
+
+    if (
+    mouseX > grijzeVlakX && mouseX < grijzeVlakX + grijzeVlakW && 
+    mouseY > grijzeVlakY && mouseY < grijzeVlakY + grijzeVlakH
+  ) {
+    fill(120);   // kleur veranderen als muis binnen is
+  } else {
+    fill(180);
+  }
+
+   rect(grijzeVlakX,grijzeVlakY,grijzeVlakW,grijzeVlakH);
+   rect(grijzeVlakX +165,grijzeVlakY,grijzeVlakW,grijzeVlakH);
+   rect(grijzeVlakX +330,grijzeVlakY,grijzeVlakW,grijzeVlakH);
+   rect(grijzeVlakX,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
+   rect(grijzeVlakX +165,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
+   rect(grijzeVlakX +330,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
+   rect(grijzeVlakX,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
+   rect(grijzeVlakX +165,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
+   rect(grijzeVlakX +330,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
+
+
 }
