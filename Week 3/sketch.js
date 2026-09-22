@@ -37,11 +37,6 @@ function draw() {
   fill(30);
   rect(150,75,500,500,30);
   fill(180); // grijze vlakjes
-  rect(grijzeVlakX,grijzeVlakY,grijzeVlakW,grijzeVlakH);
-  rect(grijzeVlakX +165,grijzeVlakY,grijzeVlakW,grijzeVlakH);
-  rect(grijzeVlakX +330,grijzeVlakY,grijzeVlakW,grijzeVlakH);
-  rect(grijzeVlakX,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
-  rect(grijzeVlakX +165,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
   rect(grijzeVlakX +330,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
   rect(grijzeVlakX,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
   rect(grijzeVlakX +165,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
@@ -55,16 +50,47 @@ function draw() {
   } else {
     fill(180);
   }
+   rect(grijzeVlakX,grijzeVlakY,grijzeVlakW,grijzeVlakH,20);
 
-   rect(grijzeVlakX,grijzeVlakY,grijzeVlakW,grijzeVlakH);
-   rect(grijzeVlakX +165,grijzeVlakY,grijzeVlakW,grijzeVlakH);
-   rect(grijzeVlakX +330,grijzeVlakY,grijzeVlakW,grijzeVlakH);
-   rect(grijzeVlakX,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
-   rect(grijzeVlakX +165,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
-   rect(grijzeVlakX +330,grijzeVlakY +160,grijzeVlakW,grijzeVlakH);
-   rect(grijzeVlakX,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
-   rect(grijzeVlakX +165,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
-   rect(grijzeVlakX +330,grijzeVlakY +320,grijzeVlakW,grijzeVlakH);
+    if (
+    mouseX > grijzeVlakX + 165 && mouseX < grijzeVlakX + 165 + grijzeVlakW && 
+    mouseY > grijzeVlakY && mouseY < grijzeVlakY + grijzeVlakH
+  ) {
+    fill(120);   // kleur veranderen als muis binnen is
+  } else {
+    fill(180);
+  }
+  rect(grijzeVlakX +165,grijzeVlakY,grijzeVlakW,grijzeVlakH,20);
+
+  if (
+    mouseX > grijzeVlakX + 330 && mouseX < grijzeVlakX + 330 + grijzeVlakW && 
+    mouseY > grijzeVlakY && mouseY < grijzeVlakY + grijzeVlakH
+  ) {
+    fill(120);   // kleur veranderen als muis binnen is
+  } else {
+    fill(180);
+  }
+  rect(grijzeVlakX +330,grijzeVlakY,grijzeVlakW,grijzeVlakH,20);
+
+  if (
+    mouseX > grijzeVlakX && mouseX < grijzeVlakX + grijzeVlakW && 
+    mouseY > grijzeVlakY + 160&& mouseY < grijzeVlakY +160 + grijzeVlakH
+  ) {
+    fill(120);   // kleur veranderen als muis binnen is
+  } else {
+    fill(180);
+  }
+   rect(grijzeVlakX,grijzeVlakY +160,grijzeVlakW,grijzeVlakH,20);
+
+    if (
+    mouseX > grijzeVlakX + 165 && mouseX < grijzeVlakX + 165+ grijzeVlakW && 
+    mouseY > grijzeVlakY + 160 && mouseY < grijzeVlakY +160 + grijzeVlakH
+  ) {
+    fill(120);   // kleur veranderen als muis binnen is
+  } else {
+    fill(180);
+  }
+   rect(grijzeVlakX + 165,grijzeVlakY +160,grijzeVlakW,grijzeVlakH,20);
 
 
 }
