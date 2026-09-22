@@ -11,10 +11,14 @@ let vak7 = 0
 let vak8 = 0
 let vak9 = 0
 
-let achtergrondRood = 535
+let grijs = 0
+let rood = 1
+let blauw = 2
+
+let achtergrondRood = 400
 
 function setup() {
-  createCanvas(1000, 850);
+  createCanvas(800, 700);
 }
 
 function draw() {
@@ -25,15 +29,15 @@ function draw() {
 // speelbord
  strokeWeight(4);
   fill(30);
-  rect(250,175,550,500,30);
+  rect(150,75,500,500,30);
   fill(180);
-  rect(300,205,110,110,20);
-  rect(480,205,110,110,20);
-  rect(660,205,110,110,20);
-  rect(300,365,110,110,20);
-  rect(480,365,110,110,20);
-  rect(660,365,110,110,20);
-  rect(300,525,110,110,20);
-  rect(480,525,110,110,20);
-  rect(660,525,110,110,20);
+  rect(180,105,110,110,20);
+  rect(345,105,110,110,20);
+  rect(510,105,110,110,20);
+  rect(180,265,110,110,20);
+  rect(345,265,110,110,20);
+  rect(510,265,110,110,20);
+  rect(180,425,110,110,20);
+  rect(345,425,110,110,20);
+  rect(510,425,110,110,20);
 }
