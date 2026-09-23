@@ -36,14 +36,15 @@ function draw() {
  strokeWeight(4); // vakjes voor input
   fill(30);
   rect(150,75,500,500,30);
-
+// grijze vlakjes waarbij als de muis bovenop staat dat het van kleur veranderd
+// het gaat van linksboven naar recht onder
     if (
     mouseX > grijzeVlakX && mouseX < grijzeVlakX + grijzeVlakW && 
     mouseY > grijzeVlakY && mouseY < grijzeVlakY + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120);  // het vakje wordt donker de muis erop zit
   } else {
-    fill(180);
+    fill(180); // blijft hetzelfde kleur zonder muis
   }
    rect(grijzeVlakX,grijzeVlakY,grijzeVlakW,grijzeVlakH,20);
 
@@ -51,7 +52,7 @@ function draw() {
     mouseX > grijzeVlakX + 165 && mouseX < grijzeVlakX + 165 + grijzeVlakW && 
     mouseY > grijzeVlakY && mouseY < grijzeVlakY + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120);  
   } else {
     fill(180);
   }
@@ -61,7 +62,7 @@ function draw() {
     mouseX > grijzeVlakX + 330 && mouseX < grijzeVlakX + 330 + grijzeVlakW && 
     mouseY > grijzeVlakY && mouseY < grijzeVlakY + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120);  
   } else {
     fill(180);
   }
@@ -71,7 +72,7 @@ function draw() {
     mouseX > grijzeVlakX && mouseX < grijzeVlakX + grijzeVlakW && 
     mouseY > grijzeVlakY + 160&& mouseY < grijzeVlakY + 160 + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120); 
   } else {
     fill(180);
   }
@@ -81,7 +82,7 @@ function draw() {
     mouseX > grijzeVlakX + 165 && mouseX < grijzeVlakX + 165+ grijzeVlakW && 
     mouseY > grijzeVlakY + 160 && mouseY < grijzeVlakY + 160 + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120); 
   } else {
     fill(180);
   }
@@ -91,7 +92,7 @@ function draw() {
     mouseX > grijzeVlakX + 330 && mouseX < grijzeVlakX + 330 + grijzeVlakW && 
     mouseY > grijzeVlakY + 160 && mouseY < grijzeVlakY + 160 + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120);
   } else {
     fill(180);
   }
@@ -101,7 +102,7 @@ function draw() {
     mouseX > grijzeVlakX && mouseX < grijzeVlakX + grijzeVlakW && 
     mouseY > grijzeVlakY + 320 && mouseY < grijzeVlakY + 320 + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120); 
   } else {
     fill(180);
   }
@@ -111,9 +112,9 @@ function draw() {
     mouseX > grijzeVlakX + 165 && mouseX < grijzeVlakX + 165 + grijzeVlakW && 
     mouseY > grijzeVlakY + 320 && mouseY < grijzeVlakY + 320 + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120);  
   } else {
-    fill(180);
+    fill(180); 
   }
    rect(grijzeVlakX + 165,grijzeVlakY +320,grijzeVlakW,grijzeVlakH,20);
 
@@ -121,13 +122,22 @@ function draw() {
     mouseX > grijzeVlakX + 330 && mouseX < grijzeVlakX + 330 + grijzeVlakW && 
     mouseY > grijzeVlakY + 320 && mouseY < grijzeVlakY + 320 + grijzeVlakH
   ) {
-    fill(120);   // kleur veranderen als muis binnen is
+    fill(120);   
   } else {
     fill(180);
   }
    rect(grijzeVlakX + 330,grijzeVlakY +320,grijzeVlakW,grijzeVlakH,20);
 
-
-
-
 }
+
+function mousePressed(){
+	
+    if (
+    mouseX > grijzeVlakX && mouseX < grijzeVlakX + grijzeVlakW && 
+    mouseY > grijzeVlakY && mouseY < grijzeVlakY + grijzeVlakH
+  ){
+    fill(0,255,0);
+    rect(50,50,50,50);
+  }
+    
+   }
