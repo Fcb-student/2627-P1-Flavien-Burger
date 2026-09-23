@@ -130,7 +130,7 @@ function draw() {
 
 }
 
-function mousePressed(){
+function mousePressed(){ // de vakje veranderd door het click van een muis
 	
     if (
     mouseX > grijzeVlakX && mouseX < grijzeVlakX + grijzeVlakW && 
