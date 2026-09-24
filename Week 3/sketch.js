@@ -1,6 +1,5 @@
 // variabel speler en bord
-let speler1 = 1
-let Speler2 = 2
+let speler = 1
 let vak1 = 0
 let vak2 = 0
 let vak3 = 0
@@ -132,12 +131,20 @@ function draw() {
 
 function mousePressed(){ // de vakje veranderd door het click van een muis
 	
+  if ( speler = 1){
+    fill(255,0,0);
+    rect(180,105,110,110);
+  }
+   if (speler = 2) {
+    fill(0,0,255);
+    rect(180,105,110,110);
+   }
     if (
     mouseX > grijzeVlakX && mouseX < grijzeVlakX + grijzeVlakW && 
     mouseY > grijzeVlakY && mouseY < grijzeVlakY + grijzeVlakH
   ){
-    fill(0,255,0);
-    rect(50,50,50,50);
+    fill(255,0,0);
+    rect(180,105,110,110);
   }
     
    }
