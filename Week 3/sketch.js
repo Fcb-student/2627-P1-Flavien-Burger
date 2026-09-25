@@ -23,7 +23,8 @@ let grijzeVlakY = 105;
 let grijzeVlakW = 110;
 let grijzeVlakH = 110;
 
-let gameOver = false;
+let gameWin = false;
+let gameDraw = false;
 
 function setup() {
   createCanvas(800, 700);
@@ -236,10 +237,18 @@ function draw() {
 }
 
 function showResetButton() {
-  if (gameOver == true) {
+  if (gameDraw == true) {
     fill(0);
     rect(300, 600, 200, 30);
-    text("reset", 310, 210);
+    fill(0,255,0);
+    text("reset", 375, 615);
+  }
+    if (gameWin == true) {
+    fill(0);
+    rect(300, 600, 200, 30);
+    fill(0,255,0);
+    strokeWeight(0,5);
+    text("reset", 375, 615);
   }
 }
 
@@ -248,56 +257,114 @@ function checkForWin() {
   if (vak1 == vak2 && vak2 == vak3 && vak1 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
-    gameOver = true;
+    gameWin = true;
     stroke(0, 255, 0);
     line(200, 160, 600, 160);
   } else if (vak4 == vak5 && vak5 == vak6 && vak4 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
-    gameOver = true;
+    gameWin = true;
     stroke(0, 255, 0);
     line(200, 320, 600, 320);
   } else if (vak7 == vak8 && vak8 == vak9 && vak7 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
-    gameOver = true;
+    gameWin = true;
     stroke(0, 255, 0);
     line(200, 480, 600, 480);
   } else if (vak1 == vak4 && vak4 == vak7 && vak1 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
-    gameOver = true;
+    gameWin = true;
     stroke(0, 255, 0);
     line(230, 120, 230, 510);
   } else if (vak2 == vak5 && vak5 == vak8 && vak2 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
-    gameOver = true;
+    gameWin = true;
     stroke(0, 255, 0);
     line(400, 120, 400, 510);
   } else if (vak3 == vak6 && vak6 == vak9 && vak3 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
-    gameOver = true;
+    gameWin = true;
     stroke(0, 255, 0);
     line(560, 120, 560, 510);
   } else if (vak1 == vak5 && vak5 == vak9 && vak1 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
-    gameOver = true;
+    gameWin = true;
     stroke(0, 255, 0);
     line(200, 120, 590, 510);
   } else if (vak7 == vak5 && vak5 == vak3 && vak7 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
-    gameOver = true;
+    gameWin = true;
     stroke(0, 255, 0);
     line(590, 120, 200, 510);
+  }
+  else if(vak1 != vak2 && vak2 != vak3 && vak1 != 0 && vak2 != 0 && vak3 != 0 ){
+    fill(0,255,0);
+    text("draw", 375,96)
+    gameDraw = true;
+  }
+  else if(vak4 != vak5 && vak5 != vak6 && vak4 != 0 && vak5 != 0 && vak6 != 0){
+    fill(0,255,0);
+    text("draw", 375,96)
+    gameDraw = true;
+  }
+  else if(vak7 != vak8 && vak8 != vak9 && vak7 != 0 && vak8 != 0 && vak9 != 0){
+    fill(0,255,0);
+    text("draw", 375,96)
+    gameDraw = true;
+  }
+ else if(vak1 != vak4 && vak4 != vak7 && vak1 != 0 && vak4 != 0 && vak7 != 0){
+    fill(0,255,0);
+    text("draw", 375,96)
+    gameDraw = true;
+  }
+ else if(vak2 != vak5 && vak5 != vak8 && vak2 != 0 && vak5 != 0 && vak8 != 0){
+    fill(0,255,0);
+    text("draw", 375,96)
+    gameDraw = true;
+  }
+ else if(vak3 != vak6 && vak6 != vak9 && vak3 != 0 && vak6 != 0 && vak9 != 0){
+    fill(0,255,0);
+    text("draw", 375,96)
+    gameDraw = true;
+  }
+ else if(vak1 != vak5 && vak5!= vak9 && vak1 != 0 && vak5 != 0 && vak9 != 0){
+    fill(0,255,0);
+    text("draw", 375,96)
+    gameDraw = true;
+  }
+ else if(vak7 != vak5 && vak5 != vak3 && vak7 != 0 && vak5 != 0 && vak3 != 0){
+    fill(0,255,0);
+    text("draw", 375,96)
+    gameDraw = true;
   }
 }
 
 function mouseClicked() {
-  if (gameOver == true) {
+  // als de game een draw is
+  if (gameDraw == true) {
+    fill(100);
+    rect(300, 600, 200, 30);
+
+    if (
+      mouseX > 300 &&
+      mouseX < 300 + 200 &&
+      mouseY > 600 &&
+      mouseY < 600 + 30
+    ) {
+      resetGame();
+    }
+    return; //springt weg uit de functie, alles hieronder wordt niet meer uitgevoerd.
+  }
+
+  // als de game gewonnen is
+  if (gameWin == true) {
+    fill(100);
     rect(300, 600, 200, 30);
 
     if (
@@ -421,6 +488,7 @@ function resetGame() {
   vak7 = 0;
   vak8 = 0;
   vak9 = 0;
-  gameOver = false;
+  gameWin = false;
+  gamwDraw = false;
   speler = 1;
 }
