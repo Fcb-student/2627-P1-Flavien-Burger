@@ -253,6 +253,36 @@ function checkForWin()
     stroke(0,255,0);
     line(200,480,600,480);
   }
+  else if( vak1 == vak4 && vak4 == vak7 && vak1 != 0)
+  {
+    console.log("winnaar is "+vak1);
+    stroke(0,255,0);
+    line(230,120,230,510);
+  }
+  else if( vak2 == vak5 && vak5 == vak8 && vak2 != 0)
+  {
+    console.log("winnaar is "+vak2);
+    stroke(0,255,0);
+    line(400,120,400,510);
+  }
+  else if( vak3 == vak6 && vak6 == vak9 && vak3 != 0)
+  {
+    console.log("winnaar is "+vak3);
+    stroke(0,255,0);
+    line(560,120,560,510);
+  }
+  else if( vak1 == vak5 && vak5 == vak9 && vak1 != 0)
+  {
+    console.log("winnaar is "+vak1);
+    stroke(0,255,0);
+    line(200,120,590,510);
+  }
+   else if( vak7 == vak5 && vak5 == vak3 && vak7 != 0)
+  {
+    console.log("winnaar is "+vak7);
+    stroke(0,255,0);
+    line(590,120,200,510);
+  }
 }
 
 function mouseClicked() {
