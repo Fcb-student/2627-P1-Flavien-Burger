@@ -303,46 +303,12 @@ function checkForWin() {
     stroke(0, 255, 0);
     line(590, 120, 200, 510);
   }
-  else if(vak1 != vak2 && vak2 != vak3 && vak1 != 0 && vak2 != 0 && vak3 != 0 ){
+  else if(vak1 != 0 && vak2 != 0 && vak3 != 0 && vak4 != 0 && vak5 != 0 && vak6 != 0 && vak7 != 0 && vak8 != 0 && vak9 != 0 && gameWin != 1 && gameWin != 2 ){
     fill(0,255,0);
     text("draw", 375,96)
     gameDraw = true;
   }
-  else if(vak4 != vak5 && vak5 != vak6 && vak4 != 0 && vak5 != 0 && vak6 != 0){
-    fill(0,255,0);
-    text("draw", 375,96)
-    gameDraw = true;
-  }
-  else if(vak7 != vak8 && vak8 != vak9 && vak7 != 0 && vak8 != 0 && vak9 != 0){
-    fill(0,255,0);
-    text("draw", 375,96)
-    gameDraw = true;
-  }
- else if(vak1 != vak4 && vak4 != vak7 && vak1 != 0 && vak4 != 0 && vak7 != 0){
-    fill(0,255,0);
-    text("draw", 375,96)
-    gameDraw = true;
-  }
- else if(vak2 != vak5 && vak5 != vak8 && vak2 != 0 && vak5 != 0 && vak8 != 0){
-    fill(0,255,0);
-    text("draw", 375,96)
-    gameDraw = true;
-  }
- else if(vak3 != vak6 && vak6 != vak9 && vak3 != 0 && vak6 != 0 && vak9 != 0){
-    fill(0,255,0);
-    text("draw", 375,96)
-    gameDraw = true;
-  }
- else if(vak1 != vak5 && vak5!= vak9 && vak1 != 0 && vak5 != 0 && vak9 != 0){
-    fill(0,255,0);
-    text("draw", 375,96)
-    gameDraw = true;
-  }
- else if(vak7 != vak5 && vak5 != vak3 && vak7 != 0 && vak5 != 0 && vak3 != 0){
-    fill(0,255,0);
-    text("draw", 375,96)
-    gameDraw = true;
-  }
+  
 }
 
 function mouseClicked() {
