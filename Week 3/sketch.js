@@ -489,6 +489,6 @@ function resetGame() {
   vak8 = 0;
   vak9 = 0;
   gameWin = false;
-  gamwDraw = false;
+  gameDraw = false;
   speler = 1;
 }
