@@ -1,7 +1,8 @@
-// variabel speler en bord
+// variabel speler en de kleuren
 let speler = 1;
 let spelerRood = 1;
 let SpelerBlauw = 2;
+// variabel van elke vakje
 let vak1 = 0;
 let vak2 = 0;
 let vak3 = 0;
@@ -15,18 +16,19 @@ let vak9 = 0;
 let grijs = 0; // kleuren vakjes
 let Rood = [255, 0, 0];
 let blauw = [0, 0, 255];
-
+//de rode achter grodn om te laten zie wie er aan de beurt is
 let achtergrondRood = 400;
-
+// coordinaten van de eerste vlak
 let grijzeVlakX = 180;
 let grijzeVlakY = 105;
 let grijzeVlakW = 110;
 let grijzeVlakH = 110;
-
+// op welke stand de game is aan het begin van het spel
 let gameWin = false;
 let gameDraw = false;
 
 function setup() {
+  // de groote van het canvas
   createCanvas(800, 700);
 }
 
@@ -34,7 +36,7 @@ function draw() {
   background(0, 0, 255); // achtergrond met kleuren voor de spelers
   stroke(0);
   strokeWeight(1);
-
+// de kleuren voor de spelers
   if (speler == 1) {
     achtergrondRood = 600;
   }
@@ -158,7 +160,7 @@ function draw() {
     fill(180);
   }
   rect(grijzeVlakX + 330, grijzeVlakY + 320, grijzeVlakW, grijzeVlakH, 20);
-
+// de vak verandert van kleur op basis van de waarde van de speler
   if (vak1 == 1) {
     fill(255, 0, 0);
     rect(grijzeVlakX, grijzeVlakY, 110, 110, 20);
@@ -230,19 +232,21 @@ function draw() {
     fill(0, 0, 255);
     rect(grijzeVlakX + 330, grijzeVlakY + 320, 110, 110, 20);
   }
-
+// checkt of er is gewonnen
   checkForWin();
-
+// de reset button komt dan
   showResetButton();
 }
 
 function showResetButton() {
+  // als er gelijkspel is komt er een button om te resetten
   if (gameDraw == true) {
     fill(0);
     rect(300, 600, 200, 30);
     fill(0,255,0);
     text("reset", 375, 615);
   }
+  // als er een winnaar is komt er een burron om te resetten
     if (gameWin == true) {
     fill(0);
     rect(300, 600, 200, 30);
@@ -253,7 +257,7 @@ function showResetButton() {
 }
 
 function checkForWin() {
-  // als drie vakje sop een rij staat dan komt er winnaar met een lijn over de vakjes
+  // als drie vakjes op een rij staat dan komt er winnaar met een lijn over de vakjes
   if (vak1 == vak2 && vak2 == vak3 && vak1 != 0) {
     fill(0, 255, 0);
     text("Winnaar", 375, 95);
@@ -303,6 +307,7 @@ function checkForWin() {
     stroke(0, 255, 0);
     line(590, 120, 200, 510);
   }
+  // zorgt ervoor dat als er een gelijkspel is dat er een reset knop komt
   else if(vak1 != 0 && vak2 != 0 && vak3 != 0 && vak4 != 0 && vak5 != 0 && vak6 != 0 && vak7 != 0 && vak8 != 0 && vak9 != 0 && gameWin != 1 && gameWin != 2 ){
     fill(0,255,0);
     text("draw", 375,96)
@@ -444,7 +449,8 @@ function changeTurn() {
   }
 }
 
-function resetGame() {
+function resetGame() { 
+  // wat precies reset wordt
   vak1 = 0;
   vak2 = 0;
   vak3 = 0;
