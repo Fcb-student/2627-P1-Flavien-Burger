@@ -4,6 +4,7 @@ function setup() {
 
 function draw() {
   background(220);
+  strokeWeight(1);
 
   fill(0); // kleur nummers
   text("1.", 20,15); // positie van de plaatjes
@@ -39,16 +40,35 @@ function draw() {
   }
 
   for(let i = 0; i < 4; i++){
-    if ( i ==0){
+    if (i == 0){
       fill(0,0,0);
     } else if (i == 1){
       fill(0,80,0);
     } else if ( i == 2){
-      fill(0,140,0);
+      fill(0,160,0);
     } else if ( i == 3){
-      fill(0,200,0);
+      fill(0,220,0);
     }
-    rect(80,115,25,50);
+    rect(80 + i * 25,115,25 + (i * 25),50);
+  }
+
+  for (let i = 0; i < 4; i++){
+    if (i == 0){
+      fill(0,0,255);
+    } else if (i == 1){
+      fill(0,0,170);
+    } else if ( i == 2){
+      fill(0,0,100);
+    } else if ( i == 3){
+      fill(0,0,0);
+    }
+    rect(80 + 25 * i,235,25,50 + 25 * i)
+  } 
+
+  for(let i = 0; i < 6; i++){
+    fill(255)
+    strokeWeight(0 + 2 * i)
+    circle(560 + 40 * i, 40 , 30);
   }
 
 }
