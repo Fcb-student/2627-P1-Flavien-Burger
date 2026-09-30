@@ -72,7 +72,6 @@ function draw() {
     let h1 = 50 + (25 * i);
     rect(x1,y1,w1,h1)
     x1 = x1 + w1
-
   } 
 
   for(let i = 0; i < 6; i++){ // 5
@@ -80,6 +79,15 @@ function draw() {
     strokeWeight(0 + 2 * i)
     circle(560 + 40 * i, 40 , 30);
   }
-
+  let KleurRW = ["Red", "White"]
+  for( let i = 0; i < 10; i ++){ // 6
+    strokeWeight(1);
+   if ( i == 0){
+    fill(KleurRW[i]);
+   } else if (i == 1){
+    fill(KleurRW[i]);
+   }
+   circle(480,230,250 - (30 * i));
+  }
 
 }
