@@ -15,7 +15,7 @@ function draw() {
   text("6.", 350,105);
   text("7.", 625,105);
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) { // 1
     if ( i == 6){
     fill("blue");
   } else {
@@ -24,7 +24,7 @@ function draw() {
   rect(10 + i * 40, 20, 40, 40); 
   }
 
-  for(let i = 0; i < 5; i++) {
+  for(let i = 0; i < 5; i++) { // 2
     if ( i == 0){
       fill(0);
     } else if ( i ==1){
@@ -38,8 +38,9 @@ function draw() {
     }
     rect(20,115 + (40 * i),40,40);
   }
+  
+  for(let i = 0; i < 4; i++){ // 3
 
-  for(let i = 0; i < 4; i++){
     if (i == 0){
       fill(0,0,0);
     } else if (i == 1){
@@ -49,10 +50,10 @@ function draw() {
     } else if ( i == 3){
       fill(0,220,0);
     }
-    rect(80 + i * 25,115,25 + (i * 25),50);
+    rect(80+ i * 25,115,25,50);
   }
 
-  for (let i = 0; i < 4; i++){
+  for (let i = 0; i < 4; i++){ // 4
     if (i == 0){
       fill(0,0,255);
     } else if (i == 1){
@@ -65,7 +66,7 @@ function draw() {
     rect(80 + 25 * i,235,25,50 + 25 * i)
   } 
 
-  for(let i = 0; i < 6; i++){
+  for(let i = 0; i < 6; i++){ // 5
     fill(255)
     strokeWeight(0 + 2 * i)
     circle(560 + 40 * i, 40 , 30);
