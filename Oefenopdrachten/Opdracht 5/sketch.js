@@ -39,6 +39,8 @@ function draw() {
     rect(20,115 + (40 * i),40,40);
   }
   
+  let x = 80;
+  let y = 115;
   for(let i = 0; i < 4; i++){ // 3
 
     if (i == 0){
@@ -50,7 +52,9 @@ function draw() {
     } else if ( i == 3){
       fill(0,220,0);
     }
-    rect(80+ i * 25,115,25,50);
+    let w = 25 + (25 * i);
+    rect(x, y, w,50);
+    x = x + w;
   }
 
   for (let i = 0; i < 4; i++){ // 4
@@ -71,5 +75,6 @@ function draw() {
     strokeWeight(0 + 2 * i)
     circle(560 + 40 * i, 40 , 30);
   }
+
 
 }
