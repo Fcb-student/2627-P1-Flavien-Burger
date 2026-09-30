@@ -56,7 +56,8 @@ function draw() {
     rect(x, y, w,50);
     x = x + w;
   }
-
+  let x1 = 80
+  let y1 = 235
   for (let i = 0; i < 4; i++){ // 4
     if (i == 0){
       fill(0,0,255);
@@ -67,7 +68,11 @@ function draw() {
     } else if ( i == 3){
       fill(0,0,0);
     }
-    rect(80 + 25 * i,235,25,50 + 25 * i)
+    let w1 = 25 + (25 * i);
+    let h1 = 50 + (25 * i);
+    rect(x1,y1,w1,h1)
+    x1 = x1 + w1
+
   } 
 
   for(let i = 0; i < 6; i++){ // 5
