@@ -79,15 +79,11 @@ function draw() {
     strokeWeight(0 + 2 * i)
     circle(560 + 40 * i, 40 , 30);
   }
-  let KleurRW = ["Red", "White"]
-  for( let i = 0; i < 10; i ++){ // 6
-    strokeWeight(1);
-   if ( i == 0){
-    fill(KleurRW[i]);
-   } else if (i == 1){
-    fill(KleurRW[i]);
-   }
-   circle(480,230,250 - (30 * i));
+  let KleurRW = ["Red", "White","Red","White","Red","White","Red","White","Red", "White"]
+  for( let i = 0; i < 11; i ++){ // 6
+   strokeWeight(1);
+   fill(KleurRW[i]);
+   circle(480,230,250 - (25 * i));
   }
 
 }
