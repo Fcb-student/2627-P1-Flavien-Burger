@@ -1,4 +1,4 @@
-let kleuren = ["red", "orange", "green", "blue", "pink", "yellow"];
+let kleuren = ["red", "orange", "green", "blue", "pink", "yellow","purple","aqua","grey","black"];
 
 let grootteVierkanten = [];
 let grootteDrieHoek = [];
@@ -8,19 +8,27 @@ function setup() {
   createCanvas(1000, 700);
   frameRate(5); 
 
- for (let i = 0; i < 10; i++){
- let randomGetal = int(random(10,100));
- grootteVierkanten.push(randomGetal);
+ for (let i = 0; i < 20; i++){
+ let size = int(random(10,100));
+  let x = int(random(10,900));
+  let y = int(random(10,650));
+  let kleur = random(kleuren);
+ let sq = [x, y, size, kleur];
+ grootteVierkanten.push(sq);
  }
 
- for (let i = 0; i < 10; i++){
+ for (let i = 0; i < 20; i++){
  let randomGetal = int(random(10,50));
  grootteDrieHoek.push(randomGetal);
  }
 
- for (let i = 0; i < 10; i++){
- let randomGetal = int(random(10,100));
- grootteCircle.push(randomGetal);
+ for (let i = 0; i < 20; i++){
+  let size = int(random(10,100));
+  let x = int(random(10,900));
+  let y = int(random(10,650));
+  let kleur = random(kleuren);
+  let C = [x,y,size, kleur];
+ grootteCircle.push(C);
  }
 
 }
@@ -30,11 +38,9 @@ background(220);
 
    
   for( let i = 0; i < grootteVierkanten.length; i++){
-    //fill(kleuren[i]);
-  let sqX = int(random(10,900));
-  let sqY = int(random(10,650));
-   
-  square(sqX,sqY,grootteVierkanten[i]);
+    
+  fill(grootteVierkanten[i][3]);
+  square(grootteVierkanten[i][0],grootteVierkanten[i][1],grootteVierkanten[i][2]);
   }
 
   //for( let i = 0; i < grootteDrieHoek.length; i++){
@@ -49,11 +55,8 @@ background(220);
   //}
   
  for( let i = 0; i < grootteCircle.length; i++){
-    //fill(kleuren[i]);
-  let CX = int(random(10,900));
-  let CY = int(random(10,650));
-   
-  circle(CX,CY,grootteCircle[i]);
+    fill(grootteCircle[i][3]);   
+  circle(grootteCircle[i][0],grootteCircle[i][1],grootteCircle[i][2]);
   }
 
 }
