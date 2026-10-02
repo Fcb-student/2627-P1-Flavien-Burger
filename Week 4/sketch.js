@@ -11,7 +11,7 @@ let kleuren = [ // kleuren vormen
   "black",
   "white",
 ];
-// kleuren achter grond
+// kleuren achtergrond
 let kleurenAchtergrond = ["indigo", "coral", "greenYellow","navy", "aquamarine", "plum", "gold", "silver", "royalBlue"];
 
 // de variablen die de vormen krijgen
@@ -21,7 +21,7 @@ let grootteCircle = [];
 
 function setup() {
   createCanvas(1000, 700);
-
+ // de art word dan gegenereerd
   generateArt();
 
 }
@@ -62,7 +62,7 @@ function keyPressed() {
     generateArt();
   }
 }
-
+// functie om dan de art te maken
 function generateArt() {
 // achtergrond veranderd elke keer
   background(random(kleurenAchtergrond));
