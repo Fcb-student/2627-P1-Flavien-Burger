@@ -6,7 +6,7 @@ function draw() {
   background(220);
   fill(100);
   tekenHuis(100,150,80);
-  tekenCirkel();
+  tekenCirkel(100,100,20);
   tekenRect();
   tekenStraal();
 }
@@ -23,7 +23,9 @@ function tekenHuis (x,y,size){
 }
 
 
-function tekenCirkel(){
+function tekenCirkel(x,y,straal){
+  fill(100);
+  circle(x,y,straal);
 
 }
 
