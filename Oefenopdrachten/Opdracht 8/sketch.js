@@ -1,3 +1,4 @@
+// laat de uitkomst in de console zien
 let uitkomst1 = optellen(3, 4);
 console.log(uitkomst1);
 
@@ -16,6 +17,7 @@ function setup() {
 
 function draw() {
   background(220);
+  // maakt de functies in de draw met de 
   tekenHuis(100,150,80);
   tekenHuis(200,150,80);
   tekenHuis(150,250,80);
@@ -27,7 +29,7 @@ function draw() {
   delen();
   vermenigvuldigen();
 }
-// maakt meerdere huizen
+// maakt meerdere huizen met parameters
 function tekenHuis (x,y,size){
   fill(255);
   strokeWeight(1);
@@ -37,7 +39,7 @@ function tekenHuis (x,y,size){
   rect(50 + x, 20 + y,20,20);
   
 }
-// maakt een rode cirkel
+// maakt een rode cirkel met parameters
 function tekenCirkel(x,y,straal){
   fill(200,0,0);
   circle(x,y,straal);
@@ -48,31 +50,31 @@ function tekenRechtHoek(x, y, w, h){
   fill(0,0,200);
   rect(x, y, w, h);
 }
-// maakt een groene lijn
+// maakt een groene lijn met parameters
 function tekenLijn(x1, y1, x2, y2){
   strokeWeight(10);
   line(x1, y1, x2, y2);
 }
-
+// maakt een rode tekst op een bepaalde locatie met parameters
 function tekenTekst(tekst, x, y, tS,c){
   fill(c);
   textSize(tS);
   text(tekst,x,y);
 }
-
+// telt getallen op met parameters
 function optellen(a, b){
   return a + b;
 
 }
-
+// deelt getallen met parameters
 function delen(c, d){
   return c / d
 }
-
+// vermenigvuldigd getallen met parameters
 function vermenigvuldigen(e, f){
   return e * f
 }
-
+// neemt getallen af met parameters
 function afnemen(g, h){
   return g - h
 }
