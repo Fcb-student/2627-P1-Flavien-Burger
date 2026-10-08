@@ -1,5 +1,6 @@
 let score = 0;
 let ballen = [];
+let kleuren = ["red","green", "yellow", "pink", "aqua", "orange"]
 
 function setup() {
   createCanvas(400, 400);
@@ -10,4 +11,9 @@ function setup() {
 }
 function draw() {
   background(30,40,80);
+  fill(kleuren[i]);
+  circle(x, y, size);
+  for (i = 0; i < ball.length; i ++){
+    circle(x, y, size)
+  }
 }
