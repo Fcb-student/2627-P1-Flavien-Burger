@@ -11,9 +11,7 @@ function setup() {
 }
 function draw() {
   background(30,40,80);
-  fill(kleuren[i]);
-  circle(x, y, size);
-  for (i = 0; i < ball.length; i ++){
-    circle(x, y, size)
-  }
+    fill(250,0,0);
+    circle(ballen.x,ballen.y, ballen.size);
+
 }
