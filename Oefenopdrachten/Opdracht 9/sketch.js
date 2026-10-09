@@ -18,3 +18,7 @@ function draw() {
     circle(bal.x,bal.y,bal.size );
   }
 }
+
+function mousepressed(){
+  
+}
