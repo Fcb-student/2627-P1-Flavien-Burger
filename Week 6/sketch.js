@@ -1,3 +1,5 @@
+let img;
+
 let scoreHealt = 100;
 let scoreEnergy = 100;
 let scoreHappiness = 100;
@@ -9,4 +11,8 @@ function setup() {
 
 function draw() {
   background(220);
+}
+
+function preload() {
+  img = loadImage(bestand);
 }
