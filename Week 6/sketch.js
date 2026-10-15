@@ -28,26 +28,27 @@ function draw() {
   fill(245, 66, 218);
   rect(780,20,100,25);// happiness
 
+  // over tijd gaat healt omlaag
   scoreHealt = scoreHealt - 0.01
   if (scoreHealt <= 0){
   scoreHealt = 0
   }
-
+  // over tijd gaat energy omlaag
   scoreEnergy = scoreEnergy - 0.01
   if (scoreEnergy <= 0){
   scoreEnergy = 0
   }
-
+  // over tijd gaat stomach leeg
   scoreStomach = scoreStomach - 0.03
   if (scoreStomach <= 0){
   scoreStomach = 0
   }
-
+  // over tijd gaat hapiness omlaag
   scoreHappiness = scoreHappiness - 0.01
   if (scoreHappiness <= 0){
   scoreHappiness = 0
   }
-
+  // op basis van de andere stats gaat happiness sneller omlaag
   if ( scoreHappiness)
    
   for(let i = 0; i <4; i ++){
