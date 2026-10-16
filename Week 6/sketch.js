@@ -11,7 +11,7 @@ function setup() {
 }
 
 function preload() {
-  img = loadImage("assets/tamagotchi woonkamer.jpg");
+  img = loadImage("foto's/tamagotchi woonkamer.jpg");
 
 }
 
@@ -62,5 +62,9 @@ function draw() {
 }
 
 function virtualPet(){
+
+}
+
+function createButton(){
 
 }
