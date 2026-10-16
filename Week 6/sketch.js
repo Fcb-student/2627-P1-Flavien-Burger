@@ -1,4 +1,4 @@
-let img;
+let woonkamerImg;
 
 let scoreHealt = 100;
 let scoreEnergy = 100;
@@ -11,13 +11,13 @@ function setup() {
 }
 
 function preload() {
-  img = loadImage("foto's/tamagotchi woonkamer.jpg");
+  woonkamerImg = loadImage("essentials/foto/tamagotchi woonkamer.jpg");
 
 }
 
 function draw() {
   background(220);
-  image(img, 0, 0, 1000, 800);
+  image(woonkamerImg, 0, 0, 1000, 800);
   // balken van waar de score van de stats staan
   fill(0,255,0);
   rect(60,20,100,25); // health
@@ -28,6 +28,7 @@ function draw() {
   fill(245, 66, 218);
   rect(780,20,100,25);// happiness
 
+  // over tijd gaan stats omlaag
   // over tijd gaat healt omlaag
   scoreHealt = scoreHealt - 0.01
   if (scoreHealt <= 0){
@@ -43,12 +44,13 @@ function draw() {
   if (scoreStomach <= 0){
   scoreStomach = 0
   }
-  // over tijd gaat hapiness omlaag
+  // hapiness omlaag
   scoreHappiness = scoreHappiness - 0.01
   if (scoreHappiness <= 0){
   scoreHappiness = 0
   }
   // op basis van de andere stats gaat happiness sneller omlaag
+  // laag stomach
   if ( scoreHappiness)
    
   for(let i = 0; i <4; i ++){
