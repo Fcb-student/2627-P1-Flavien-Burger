@@ -5,6 +5,11 @@ let scoreEnergy = 100;
 let scoreHappiness = 100;
 let scoreStomach = 100;
 
+let buttonX = 50;
+let buttonY = 700;
+let buttonW = 150;
+let buttonH = 7350;
+
 function setup() {
   
   createCanvas(1000, 800);
@@ -27,6 +32,9 @@ function draw() {
   rect(540,20,100,25);// stomach
   fill(245, 66, 218);
   rect(780,20,100,25);// happiness
+
+  fill(100);
+  rect(buttonX,buttonY,buttonW,buttonH)
 
   // over tijd gaan stats omlaag
   // over tijd gaat healt omlaag
