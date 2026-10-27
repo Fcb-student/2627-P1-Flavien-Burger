@@ -11,7 +11,7 @@ let buttonY = 730;
 let buttonW = 130;
 let buttonH = 50;
 
-let buttonName = [woonkamer, slaapKamer, keuken, badkamer]
+let buttonName = [ "Livingroom", "Bedroom", "Kitchen", "Bathroom", "Garden"]
 
 function setup() {
   
@@ -39,6 +39,8 @@ function draw() {
   for(let i = 0; i < 5; i ++){
   fill(100);
   rect(buttonX + ( 200 * i),buttonY,buttonW,buttonH);
+  fill(10);
+  text(buttonName[i],85 + ( 200 * i),760);
   }
 
   // over tijd gaan stats omlaag
