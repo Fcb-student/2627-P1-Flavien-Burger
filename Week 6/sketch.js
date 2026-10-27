@@ -1,14 +1,17 @@
 let woonkamerImg;
 
+
 let scoreHealt = 100;
 let scoreEnergy = 100;
 let scoreHappiness = 100;
 let scoreStomach = 100;
 
 let buttonX = 50;
-let buttonY = 700;
-let buttonW = 150;
-let buttonH = 7350;
+let buttonY = 730;
+let buttonW = 130;
+let buttonH = 50;
+
+let buttonName = [woonkamer, slaapKamer, keuken, badkamer]
 
 function setup() {
   
@@ -33,8 +36,10 @@ function draw() {
   fill(245, 66, 218);
   rect(780,20,100,25);// happiness
 
+  for(let i = 0; i < 5; i ++){
   fill(100);
-  rect(buttonX,buttonY,buttonW,buttonH)
+  rect(buttonX + ( 200 * i),buttonY,buttonW,buttonH);
+  }
 
   // over tijd gaan stats omlaag
   // over tijd gaat healt omlaag
@@ -60,6 +65,13 @@ function draw() {
   // op basis van de andere stats gaat happiness sneller omlaag
   // laag stomach
   if ( scoreHappiness)
+
+  if (scoreEnergy == 0 && scoreHappiness == 0 && scoreHealt == 0 && scoreStomach == 0){
+      fill(0);
+    textSize(10);
+    text("Game Over",500,150)
+  }
+
    
   for(let i = 0; i <4; i ++){
   fill(0);
