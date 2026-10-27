@@ -39,7 +39,7 @@ function draw() {
   for(let i = 0; i < 5; i ++){
   fill(100);
   rect(buttonX + ( 200 * i),buttonY,buttonW,buttonH);
-  fill(10);
+  fill(255);
   text(buttonName[i],85 + ( 200 * i),760);
   }
 
@@ -89,6 +89,7 @@ function virtualPet(){
 
 }
 
-function createButton(){
+function buttonPlay(){
+
 
 }
