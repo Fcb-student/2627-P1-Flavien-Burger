@@ -114,41 +114,42 @@ function mouseClickedLivingRoom(){
        
    if(
     mouseX > buttonX &&
-    mouseX < buttonX + buttonWW &&
+    mouseX < buttonX + buttonW &&
     mouseY > buttonY  &&
-    mouseY < buttonYY + buttonHH
+    mouseY < buttonY + buttonH
    ) {
-      
+      scoreHappiness + 10;
    }
 
    if (mouseX > buttonX + 200 &&
-    mouseX < buttonX + 200 + buttonWW &&
+    mouseX < buttonX + 200 + buttonW &&
     mouseY > buttonY  &&
-    mouseY < buttonYY + buttonHH
+    mouseY < buttonY + buttonH
    ){
-    afterLoad(Bedroomimg);
-   }
+    image(Bedroomimg, 0, 0, 1000, 800);
+    console.log("1");
+     }
 
    if (mouseX > buttonX + 400 &&
-    mouseX < buttonX + 400 + buttonWW &&
+    mouseX < buttonX + 400 + buttonW &&
     mouseY > buttonY  &&
-    mouseY < buttonYY + buttonHH
+    mouseY < buttonY + buttonH
    ){
-    afterLoad(kitchenimg);
+    image(kitchenimg, 0, 0, 1000, 800);
    }
    if (mouseX > buttonX + 600 &&
-    mouseX < buttonX + 600 + buttonWW &&
+    mouseX < buttonX + 600 + buttonW &&
     mouseY > buttonY  &&
-    mouseY < buttonYY + buttonHH
+    mouseY < buttonY + buttonH
    ){
-    afterLoad(Bathroomimg);
+    image(Bathroomimg, 0, 0, 1000, 800);
    }
    if (mouseX > buttonX + 800 &&
-    mouseX < buttonX + 800 + buttonWW &&
+    mouseX < buttonX + 800 + buttonW &&
     mouseY > buttonY  &&
-    mouseY < buttonYY + buttonHH
+    mouseY < buttonY + buttonH
    ){
-    afterLoad(Gardenimg);
+    image(Gardenimg, 0, 0, 1000, 800);
    }
 
   }
