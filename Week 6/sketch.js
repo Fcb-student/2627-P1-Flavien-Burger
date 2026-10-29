@@ -15,15 +15,16 @@ let scoreStomach = 100;
 let tamagotchiAlive = true
 
 let buttonX = 50;
-let buttonY = 730;
+let buttonY = 630;
 let buttonW = 130;
 let buttonH = 50;
 
-let buttonName1 = [ "Pet", "Bedroom", "Kitchen", "Bathroom", "Garden"]
+let buttonNameLocation = [ "Livingroom", "Bedroom", "Kitchen", "Bathroom", "Garden"]
+let buttonNameActivity = ["pet", "sleep", "eat", "clean", "play"]
 
 function setup() {
   backgroundImage = livingRoomImg;
-  createCanvas(1000, 800);
+  createCanvas(1000, 700);
 }
 
 function preload() {
@@ -39,7 +40,6 @@ function draw() {
   background(220);
   // plaatjes van achtergrond
   image(backgroundImage, 0, 0, 1000, 800);
-  mouseClicked();
 
   // balken van waar de score van de stats staan
   fill(0,255,0);
@@ -56,7 +56,7 @@ function draw() {
   fill(100);
   rect(buttonX + ( 200 * i),buttonY,buttonW,buttonH, 20);
   fill(255);
-  text(buttonName1[i],85 + ( 200 * i),760);
+  text(buttonNameLocation[i],90 + ( 200 * i),660);
   }
   
 }
@@ -117,7 +117,7 @@ function mouseClicked() {
     mouseY > buttonY &&
     mouseY < buttonY + buttonH
   ) {
-   scoreHappiness + 10;
+    
   }
   // de buttons veranderen de achtergrond
  // button voor slaap kamer
@@ -127,7 +127,7 @@ function mouseClicked() {
     mouseY > buttonY &&
     mouseY < buttonY + buttonH
   ) {
-   image(bedRoomImg, 0, 0, 1000, 800);
+    backgroundImage = bedRoomImg;
   }
  // button voor keuken
   if (
@@ -136,7 +136,7 @@ function mouseClicked() {
     mouseY > buttonY &&
     mouseY < buttonY + buttonH
   ) {
-    image(kitchenImg, 0, 0, 1000, 800);
+     backgroundImage = kitchenImg;
   }
  // button voor hadkamer
   if (
@@ -145,7 +145,7 @@ function mouseClicked() {
     mouseY > buttonY &&
     mouseY < buttonY + buttonH
   ) {
-    image(bathRoomImg, 0, 0, 1000, 900);
+     backgroundImage = bathRoomImg;
   }
  // button voor tuin
   if (
@@ -154,7 +154,7 @@ function mouseClicked() {
     mouseY > buttonY &&
     mouseY < buttonY + buttonH
   ) {
-   image(gardenImg, 0, 0, 1000, 800);
+    backgroundImage = gardenImg;
   }
 }
 
