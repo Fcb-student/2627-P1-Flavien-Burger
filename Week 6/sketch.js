@@ -56,7 +56,8 @@ function draw() {
   fill(100);
   rect(buttonX + ( 200 * i),buttonY,buttonW,buttonH, 20);
   fill(255);
-  text(buttonNameLocation[i],90 + ( 200 * i),660);
+  text(buttonNameLocation[i], + ( 200 * i),660);
+  virtualPet();
   }
   
 }
@@ -94,7 +95,9 @@ function statsChange(){
   }
   // op basis van de andere stats gaat happiness sneller omlaag
   // laag stomach
-  if ( scoreHappiness)
+  if ( scoreHealt <=50){
+    scoreHappiness - 0.03
+  }
 
   if (scoreEnergy == 0 && scoreHappiness == 0 && scoreHealt == 0 && scoreStomach == 0){
     tamagotchiAlive == false
