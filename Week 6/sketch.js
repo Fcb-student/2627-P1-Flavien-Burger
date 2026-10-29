@@ -1,8 +1,10 @@
-let Livingroomimg;
-let Bedroomimg;
-let kitchenimg;
-let Bathroomimg;
-let Gardenimg;
+let livingRoomImg;
+let bedRoomImg;
+let kitchenImg;
+let bathRoomImg;
+let gardenImg;
+
+let backgroundImage
 
 
 let scoreHealt = 100;
@@ -20,25 +22,25 @@ let buttonH = 50;
 let buttonName1 = [ "Pet", "Bedroom", "Kitchen", "Bathroom", "Garden"]
 
 function setup() {
-  
+  backgroundImage = livingRoomImg;
   createCanvas(1000, 800);
 }
 
 function preload() {
-  woonkamerImg = loadImage("essentials/foto/tamagotchi woonkamer.jpg");
+  livingRoomImg = loadImage("essentials/foto/tamagotchi woonkamer.jpg");
+  bedRoomImg = loadImage("essentials/foto/tamagotchi slaapkamer.jpg");
+  kitchenImg = loadImage("essentials/foto/tamagotchi keuken.jpg");
+  bathRoomImg = loadImage("essentials/foto/tamagotchi badkamer.jpg");
+  gardenImg = loadImage("essentials/foto/images.jpg");
 
-}
-
-function afterLoad(){
-  Bedroomimg = loadImage("essentials/foto/tamagotchi slaapkamer.jpg");
-  kitchenimg = loadImage("essentials/foto/tamagotchi keuken.jpg");
-  Bathroomimg = loadImage("essentials/foto/tamagotchi baadkamer.jpg");
-  Gardenimg = loadImage("essentials/foto/images.jpg");
 }
 
 function draw() {
   background(220);
-  image(woonkamerImg, 0, 0, 1000, 800);
+  // plaatjes van achtergrond
+  image(backgroundImage, 0, 0, 1000, 800);
+  mouseClicked();
+
   // balken van waar de score van de stats staan
   fill(0,255,0);
   rect(60,20,100,25); // health
@@ -56,8 +58,7 @@ function draw() {
   fill(255);
   text(buttonName1[i],85 + ( 200 * i),760);
   }
-
- mouseClickedLivingRoom();
+  
 }
 
 function statsChange(){
@@ -108,49 +109,56 @@ function virtualPet(){
 
 }
 
-function mouseClickedLivingRoom(){
-  // de buttond hebben verschillende functionies
-  if ( tamagotchiAlive == true){
-       
-   if(
+function mouseClicked() {
+  // geeft de pet aandacht
+  if (
     mouseX > buttonX &&
     mouseX < buttonX + buttonW &&
-    mouseY > buttonY  &&
+    mouseY > buttonY &&
     mouseY < buttonY + buttonH
-   ) {
-      scoreHappiness + 10;
-   }
-
-   if (mouseX > buttonX + 200 &&
-    mouseX < buttonX + 200 + buttonW &&
-    mouseY > buttonY  &&
-    mouseY < buttonY + buttonH
-   ){
-    image(Bedroomimg, 0, 0, 1000, 800);
-    console.log("1");
-     }
-
-   if (mouseX > buttonX + 400 &&
-    mouseX < buttonX + 400 + buttonW &&
-    mouseY > buttonY  &&
-    mouseY < buttonY + buttonH
-   ){
-    image(kitchenimg, 0, 0, 1000, 800);
-   }
-   if (mouseX > buttonX + 600 &&
-    mouseX < buttonX + 600 + buttonW &&
-    mouseY > buttonY  &&
-    mouseY < buttonY + buttonH
-   ){
-    image(Bathroomimg, 0, 0, 1000, 800);
-   }
-   if (mouseX > buttonX + 800 &&
-    mouseX < buttonX + 800 + buttonW &&
-    mouseY > buttonY  &&
-    mouseY < buttonY + buttonH
-   ){
-    image(Gardenimg, 0, 0, 1000, 800);
-   }
-
+  ) {
+   scoreHappiness + 10;
   }
+  // de buttons veranderen de achtergrond
+ // button voor slaap kamer
+  if (
+    mouseX > buttonX + 200 &&
+    mouseX < buttonX + 200 + buttonW &&
+    mouseY > buttonY &&
+    mouseY < buttonY + buttonH
+  ) {
+   image(bedRoomImg, 0, 0, 1000, 800);
+  }
+ // button voor keuken
+  if (
+    mouseX > buttonX + 400 &&
+    mouseX < buttonX + 400 + buttonW &&
+    mouseY > buttonY &&
+    mouseY < buttonY + buttonH
+  ) {
+    image(kitchenImg, 0, 0, 1000, 800);
+  }
+ // button voor hadkamer
+  if (
+    mouseX > buttonX + 600 &&
+    mouseX < buttonX + 600 + buttonW &&
+    mouseY > buttonY &&
+    mouseY < buttonY + buttonH
+  ) {
+    image(bathRoomImg, 0, 0, 1000, 900);
+  }
+ // button voor tuin
+  if (
+    mouseX > buttonX + 800 &&
+    mouseX < buttonX + 800 + buttonW &&
+    mouseY > buttonY &&
+    mouseY < buttonY + buttonH
+  ) {
+   image(gardenImg, 0, 0, 1000, 800);
+  }
+}
+
+function mouseClickedLivingRoom(){
+  // de buttons hebben verschillende functionies
+ 
 }
