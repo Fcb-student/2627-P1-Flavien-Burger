@@ -1,31 +1,25 @@
+// variabelen voor soorten archtergronden
 let livingRoomImg;
 let bedRoomImg;
 let kitchenImg;
 let bathRoomImg;
 let gardenImg;
-
+// variabel voor de achtergrond
 let backgroundImage
 
-
+// de variabelen van de stats
 let scoreHealt = 100;
-let scoreHealtMax = 100;
-
 let scoreEnergy = 100;
-let scoreEnergytMax = 100;
-
 let scoreHappiness = 100;
-let scoreHappinessMax = 100;
-
 let scoreStomach = 100;
-let scoreStomachMax = 100;
-
+// de stand van de hyuisdier
 let tamagotchiAlive = true
-
+// coordinaten van de button
 let buttonX = 50;
 let buttonY = 630;
 let buttonW = 130;
 let buttonH = 50;
-
+// array voor de namen van buttons
 let buttonNameLocation = [ "Livingroom", "Bedroom", "Kitchen", "Bathroom", "Garden"]
 let buttonNameActivity = ["pet", "sleep", "eat", "clean", "play"]
 
@@ -33,13 +27,13 @@ function setup() {
   backgroundImage = livingRoomImg;
   createCanvas(1000, 700);
 }
-
+// alles staat al in bestand
 function preload() {
   livingRoomImg = loadImage("essentials/foto/tamagotchi woonkamer.jpg");
   bedRoomImg = loadImage("essentials/foto/tamagotchi slaapkamer.jpg");
   kitchenImg = loadImage("essentials/foto/tamagotchi keuken.jpg");
   bathRoomImg = loadImage("essentials/foto/tamagotchi badkamer.jpg");
-  gardenImg = loadImage("essentials/foto/images.jpg");
+  gardenImg = loadImage("essentials/foto/garden.jpg");
 
 }
 
@@ -58,7 +52,7 @@ function draw() {
   fill(245, 66, 218);
   rect(780,20,100,25);// happiness
   statsChange();
-
+  // de buttons maken 5 naast elkaar
   for(let i = 0; i < 5; i ++){
   fill(100);
   rect(buttonX + ( 200 * i),buttonY,buttonW,buttonH, 20);
@@ -66,46 +60,53 @@ function draw() {
   text(buttonNameLocation[i], 100 + ( 200 * i),660);
   virtualPet();
   }
-
+// per kamer komt een button voor een activiteit
+// woonkamer pets
   if ( backgroundImage == livingRoomImg){
     fill(100)
     rect(50,530,130,50,20);
     fill(255);
     text(buttonNameActivity[0], 100, 560);
   }
-  
+  // slaapkamer slapen
   if ( backgroundImage == bedRoomImg){
     fill(100)
     rect(250,530,130,50,20);
     fill(255);
     text(buttonNameActivity[1], 300, 560);
   }
-  
+  // keuken eten
   if ( backgroundImage == kitchenImg){
     fill(100)
     rect(450,530,130,50,20);
     fill(255);
     text(buttonNameActivity[2], 500, 560);
   }
-  
+  // badkamer schoonmaken
   if ( backgroundImage == bathRoomImg){
     fill(100)
     rect(650,530,130,50,20);
     fill(255);
     text(buttonNameActivity[3], 700, 560);
   }
-  
+  // tuin spelen
   if ( backgroundImage == gardenImg){
     fill(100)
     rect(850,530,130,50,20);
     fill(255);
     text(buttonNameActivity[4], 900, 560);
   }
+ // stand van huisdier bij stats
+ // blij
+  if ( scoreEnergy >= 85 && scoreHappiness >= 85 && scoreHealt >= 85 && scoreStomach >= 85){
   
+  }
+  // tevreden
 }
 
 function statsChange(){
 // de begin van de stats
+// locatie
   for(let i = 0; i <4; i ++){
   fill(0);
   text(round(scoreHealt),100,40);
@@ -122,6 +123,9 @@ function statsChange(){
   } // grens van healt
   if (scoreHealt >= 100){
     scoreHealt = 100
+  }
+  if ( scoreStomach <= 40){
+    scoreHealt = scoreHealt - 0.2
   }
   // over tijd gaat energy omlaag
   scoreEnergy = scoreEnergy - 0.01
@@ -143,7 +147,8 @@ function statsChange(){
   scoreHappiness = scoreHappiness - 0.01
   if (scoreHappiness <= 0){
   scoreHappiness = 0
-  } // grens van happines
+  } 
+  // grens van happines
   if (scoreHappiness >= 100){
     scoreHappiness = 100
   }
@@ -151,22 +156,6 @@ function statsChange(){
   // laag stomach
   if ( scoreHealt <= 50){
     scoreHappiness = scoreHappiness - 0.03
-  }
-
-  if (scoreEnergy == 0 && scoreHappiness == 0 && scoreHealt == 0 && scoreStomach == 0){
-    tamagotchiAlive == false
-    if( tamagotchiAlive == false){
-    fill(0);
-    text("Game Over",500,150)
-    }
-  }
-
-  if ( scoreEnergy == 90 && scoreHappiness == 90 && scoreHealt == 90 && scoreStomach == 90){
-    fill(255,200,200);
-    circle(500,350,100);
-    fill(0);
-    circle();
-    circle();
   }
 }
 
@@ -258,7 +247,7 @@ function mouseClicked() {
     mouseY > 530 &&
     mouseY < 530 + 50
   ){
-    scoreHealt = scoreHealt + 30;
+    scoreHealt = scoreHealt + 20;
     scoreHappiness = scoreHappiness - 5;
   }
  // om te spelen
@@ -271,10 +260,39 @@ function mouseClicked() {
     scoreHappiness = scoreHappiness + 30;
     scoreEnergy = scoreEnergy - 20;
     scoreStomach = scoreStomach - 20;
+    scoreHealt = scoreHealt - 15;
+  }
+
+  if (
+    mouseX > 500 &&
+    mouseX < 500 + 100 &&
+    mouseY > 300 &&
+    mouseY < 300 + 50
+  ) {
+    resetGame();
+  }
+
+  // een game over zou komen als stats 0 zijn
+  if (scoreEnergy == 0 && scoreHappiness == 0 && scoreHealt == 0 && scoreStomach == 0){
+    tamagotchiAlive == false
+    if( tamagotchiAlive == false){
+      fill(100);
+      rect(500,300,100,50);
+      fill(0);
+      text("Game Over",500,200);
+      fill(255);
+      text("reset",550,525);
+    }
+    return
   }
 }
 
-function mouseClickedLivingRoom(){
-  // de buttons hebben verschillende functionies
- 
+function resetGame() { 
+  // wat precies reset wordt
+  scoreEnergy = 100;
+  scoreHappiness = 100;
+  scoreHealt = 100;
+  scoreStomach = 100;
+  backgroundImage = livingRoomImg;
+  tamagotchiAlive =  true
 }
