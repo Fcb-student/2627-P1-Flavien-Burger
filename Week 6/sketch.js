@@ -8,9 +8,16 @@ let backgroundImage
 
 
 let scoreHealt = 100;
+let scoreHealtMax = 100;
+
 let scoreEnergy = 100;
+let scoreEnergytMax = 100;
+
 let scoreHappiness = 100;
+let scoreHappinessMax = 100;
+
 let scoreStomach = 100;
+let scoreStomachMax = 100;
 
 let tamagotchiAlive = true
 
@@ -55,8 +62,10 @@ function draw() {
   for(let i = 0; i < 5; i ++){
   fill(100);
   rect(buttonX + ( 200 * i),buttonY,buttonW,buttonH, 20);
+  rect(50 + (200 * i),530, 130 , 50, 20);
   fill(255);
-  text(buttonNameLocation[i], + ( 200 * i),660);
+  text(buttonNameLocation[i], 100 + ( 200 * i),660);
+  text(buttonNameActivity[i], 100 + (200 * i), 560);
   virtualPet();
   }
   
@@ -78,25 +87,37 @@ function statsChange(){
   if (scoreHealt <= 0){
   scoreHealt = 0
   }
+  if (scoreHealt >= 100){
+    scoreHealt = 100
+  }
   // over tijd gaat energy omlaag
   scoreEnergy = scoreEnergy - 0.01
   if (scoreEnergy <= 0){
   scoreEnergy = 0
+  }
+  if (scoreEnergy >= 100){
+    scoreEnergy = 100
   }
   // over tijd gaat stomach leeg
   scoreStomach = scoreStomach - 0.03
   if (scoreStomach <= 0){
   scoreStomach = 0
   }
+  if (scoreStomach >= 100){
+    scoreStomach = 100
+  }
   // hapiness omlaag
   scoreHappiness = scoreHappiness - 0.01
   if (scoreHappiness <= 0){
   scoreHappiness = 0
   }
+  if (scoreHappiness >= 100){
+    scoreHappiness = 100
+  }
   // op basis van de andere stats gaat happiness sneller omlaag
   // laag stomach
-  if ( scoreHealt <=50){
-    scoreHappiness - 0.03
+  if ( scoreHealt <= 50){
+    scoreHappiness = scoreHappiness - 0.03
   }
 
   if (scoreEnergy == 0 && scoreHappiness == 0 && scoreHealt == 0 && scoreStomach == 0){
@@ -113,16 +134,17 @@ function virtualPet(){
 }
 
 function mouseClicked() {
-  // geeft de pet aandacht
+  // de buttons veranderen de achtergrond
+  // button woonkamer
   if (
     mouseX > buttonX &&
     mouseX < buttonX + buttonW &&
     mouseY > buttonY &&
     mouseY < buttonY + buttonH
   ) {
-    
+    backgroundImage = livingRoomImg
   }
-  // de buttons veranderen de achtergrond
+  
  // button voor slaap kamer
   if (
     mouseX > buttonX + 200 &&
@@ -158,6 +180,56 @@ function mouseClicked() {
     mouseY < buttonY + buttonH
   ) {
     backgroundImage = gardenImg;
+  }
+  // acties voor de huisdier
+  // om te aaien.
+  if ( 
+    mouseX > 50 &&
+    mouseX < 50 + 130 &&
+    mouseY > 530 &&
+    mouseY < 530 + 50
+  ){
+    scoreHappiness = scoreHappiness + 10;
+  }
+ // om te slapen
+  if ( 
+    mouseX > (50 + 200) &&
+    mouseX < (50 + 200) + 130 &&
+    mouseY > 530 &&
+    mouseY < 530 + 50
+  ){
+    scoreEnergy = scoreEnergy + 40;
+  }
+ // om te eten
+  if ( 
+    mouseX > (50 + 400) &&
+    mouseX < (50 + 400) + 130 &&
+    mouseY > 530 &&
+    mouseY < 530 + 50
+  ){
+    scoreStomach = scoreStomach + 30
+    scoreEnergy = scoreEnergy + 10;
+  }
+ // om te wassen
+  if ( 
+    mouseX > (50 + 600) &&
+    mouseX < (50 + 600) + 130 &&
+    mouseY > 530 &&
+    mouseY < 530 + 50
+  ){
+    scoreHealt = scoreHealt + 30;
+    scoreHappiness = scoreHappiness - 5;
+  }
+ // om te spelen
+  if ( 
+    mouseX > (50 + 800) &&
+    mouseX < (50 + 800) + 130 &&
+    mouseY > 530 &&
+    mouseY < 530 + 50
+  ){
+    scoreHappiness = scoreHappiness + 30;
+    scoreEnergy = scoreEnergy - 20;
+    scoreStomach = scoreStomach - 20;
   }
 }
 
