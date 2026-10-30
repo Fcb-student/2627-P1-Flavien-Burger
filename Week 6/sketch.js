@@ -158,7 +158,7 @@ function statsChange(){
     scoreHappiness = scoreHappiness - 0.03
   }
 }
-
+// de huisdier zal dan door draw gemaakt worden
 function virtualPet(){
 
 }
@@ -211,7 +211,7 @@ function mouseClicked() {
   ) {
     backgroundImage = gardenImg;
   }
-  // acties voor de huisdier
+  // acties voor de huisdier die de stast veranderen
   // om te aaien.
   if ( 
     mouseX > 50 &&
@@ -256,7 +256,7 @@ function mouseClicked() {
     mouseX < (50 + 800) + 130 &&
     mouseY > 530 &&
     mouseY < 530 + 50
-  ){
+  ){ // de stats die veranderen
     scoreHappiness = scoreHappiness + 30;
     scoreEnergy = scoreEnergy - 20;
     scoreStomach = scoreStomach - 20;
@@ -268,7 +268,7 @@ function mouseClicked() {
     mouseX < 500 + 100 &&
     mouseY > 300 &&
     mouseY < 300 + 50
-  ) {
+  ) { // zou een reset maken
     resetGame();
   }
 
