@@ -127,6 +127,14 @@ function statsChange(){
     text("Game Over",500,150)
     }
   }
+
+  if ( scoreEnergy == 90 && scoreHappiness == 90 && scoreHealt == 90 && scoreStomach == 90){
+    fill(255,200,200);
+    circle(500,350,100);
+    fill(0);
+    circle();
+    circle();
+  }
 }
 
 function virtualPet(){
