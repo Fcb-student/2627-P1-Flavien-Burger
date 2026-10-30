@@ -86,7 +86,7 @@ function statsChange(){
   scoreHealt = scoreHealt - 0.01
   if (scoreHealt <= 0){
   scoreHealt = 0
-  }
+  } // grens van healt
   if (scoreHealt >= 100){
     scoreHealt = 100
   }
@@ -94,7 +94,7 @@ function statsChange(){
   scoreEnergy = scoreEnergy - 0.01
   if (scoreEnergy <= 0){
   scoreEnergy = 0
-  }
+  }// grens van energie
   if (scoreEnergy >= 100){
     scoreEnergy = 100
   }
@@ -102,7 +102,7 @@ function statsChange(){
   scoreStomach = scoreStomach - 0.03
   if (scoreStomach <= 0){
   scoreStomach = 0
-  }
+  } // grens van stomach
   if (scoreStomach >= 100){
     scoreStomach = 100
   }
@@ -110,7 +110,7 @@ function statsChange(){
   scoreHappiness = scoreHappiness - 0.01
   if (scoreHappiness <= 0){
   scoreHappiness = 0
-  }
+  } // grens van happines
   if (scoreHappiness >= 100){
     scoreHappiness = 100
   }
