@@ -62,11 +62,44 @@ function draw() {
   for(let i = 0; i < 5; i ++){
   fill(100);
   rect(buttonX + ( 200 * i),buttonY,buttonW,buttonH, 20);
-  rect(50 + (200 * i),530, 130 , 50, 20);
   fill(255);
   text(buttonNameLocation[i], 100 + ( 200 * i),660);
-  text(buttonNameActivity[i], 100 + (200 * i), 560);
   virtualPet();
+  }
+
+  if ( backgroundImage == livingRoomImg){
+    fill(100)
+    rect(50,530,130,50,20);
+    fill(255);
+    text(buttonNameActivity[0], 100, 560);
+  }
+  
+  if ( backgroundImage == bedRoomImg){
+    fill(100)
+    rect(250,530,130,50,20);
+    fill(255);
+    text(buttonNameActivity[1], 300, 560);
+  }
+  
+  if ( backgroundImage == kitchenImg){
+    fill(100)
+    rect(450,530,130,50,20);
+    fill(255);
+    text(buttonNameActivity[2], 500, 560);
+  }
+  
+  if ( backgroundImage == bathRoomImg){
+    fill(100)
+    rect(650,530,130,50,20);
+    fill(255);
+    text(buttonNameActivity[3], 700, 560);
+  }
+  
+  if ( backgroundImage == gardenImg){
+    fill(100)
+    rect(850,530,130,50,20);
+    fill(255);
+    text(buttonNameActivity[4], 900, 560);
   }
   
 }
