@@ -163,6 +163,14 @@ function virtualPet(){
 
 }
 
+//function setup() {
+  //let scoreHappiness = getItem(100);
+  //let scoreEnergy = getItem(scoreEnergy);
+  //let scoreHealt = getItem(scoreHealt);
+  //let scoreStomach = getItem(scoreStomach);
+  //print("De opgeslagen score is:", 100);
+//}
+
 function mouseClicked() {
   // de buttons veranderen de achtergrond
   // button woonkamer
